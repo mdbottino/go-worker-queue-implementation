@@ -14,7 +14,7 @@ type Job struct {
 }
 
 // A buffered channel that we can send work requests on
-var JobQueue chan Job = make(chan Job)
+var JobQueue chan Job = make(chan Job, 1000)
 
 // Worker represents the worker that executes the job
 type Worker struct {
